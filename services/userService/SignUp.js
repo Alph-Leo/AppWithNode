@@ -3,9 +3,12 @@ import { RegistrationRequest } from "../../requests/userRequest/SignUpRequest";
 import * as bcrypt from 'bcrypt'
 
 
+
+
 export class UserService {
     static async createUser(registrationRequest){
         try{
+            
             const {username, password} = registrationRequest;
             const hashedPassword = await bcrypt.hash(password, 10);
 
