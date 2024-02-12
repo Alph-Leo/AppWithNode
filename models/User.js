@@ -1,6 +1,10 @@
 import mongoose, { Schema, model } from "mongoose";
 
 const UserSchema = new Schema({
+    id: {
+        type: String
+    },
+    
     username: {
         type: String,
         require: true,

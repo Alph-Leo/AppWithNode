@@ -1,6 +1,10 @@
 import { Schema, model } from "mongoose";
 
 const EntrySchema = new Schema({
+    id: {
+        type: String
+    },
+    
     title: {
         type: String, 
         require: true
