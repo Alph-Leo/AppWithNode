@@ -4,7 +4,7 @@ import { UserService } from "../../services/userService/SignUp";
 const req = request
 const res = response
 
-export class UserController {
+class UserController {
     
     static async createUser(){
         
@@ -20,4 +20,6 @@ export class UserController {
 
         }
 }
-}
+};
+
+export default UserController;

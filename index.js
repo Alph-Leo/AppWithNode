@@ -6,7 +6,7 @@ import { router } from './routes/userRoutes/UserRouter.js'
 dotenv.config()
 const port = process.env.PORT
 
-const mongoURL = process.env.DB_URL
+const mongoURL = process.env.DB_URL | 'mongodb://127.0.0.1:27017/diarydb';
 mongoose.Promise = global.Promise;
 
 mongoose.connect(mongoURL, {

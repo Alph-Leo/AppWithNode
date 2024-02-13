@@ -3,7 +3,7 @@ import User from "../../models/User";
 import * as bcrypt from 'bcrypt'
 
 
-export class UserService {
+ class UserService {
     static async createUser(RegistrationRequest){
         try{
             
@@ -26,4 +26,6 @@ export class UserService {
         }
 
     }
-}
+};
+
+export default UserService;
