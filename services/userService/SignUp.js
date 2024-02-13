@@ -1,22 +1,22 @@
 import User from "../../models/User";
-//const {RegistrationRequest} = require('../../requests/userRequest/SignUpRequest')
 import * as bcrypt from 'bcrypt'
 
 
  class UserService {
-    static async createUser(RegistrationRequest){
+    static async createUser(registrationRequest){
         try{
-            
-            const hashedPassword = await bcrypt.hash(password, 10);
-           RegistrationRequest.password = hashedPassword;
+            const {username, password} = registrationRequest;
 
-            const existingUser = await User.findOne({username : RegistrationRequest.username});
+            const hashedPassword = await bcrypt.hash(password, 10);
+            registrationRequest.password = hashedPassword;
+
+            const existingUser = await User.findOne({username});
 
             if(existingUser){
                 console.log('User Already Exists');
                 throw new Error('User Already Exists');
             }
-            const newUser = new User({RegistrationRequest});
+            const newUser = new User({registrationRequest});
            return await newUser.save();
         
 

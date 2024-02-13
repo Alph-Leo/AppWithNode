@@ -1,16 +1,13 @@
 import { request, response } from "express";
 import { UserService } from "../../services/userService/SignUp";
 
-const req = request
-const res = response
 
 class UserController {
     
-    static async createUser(){
+    static async createUser(req = request, res = response){
         
         try{
-            const userRequest = req.body;   
-            const savedUser = await UserService.createUser(userRequest);
+            const savedUser = await UserService.createUser(req);
 
             res.status(201).json(savedUser);            
             
