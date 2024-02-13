@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import * as dotenv from 'dotenv'
-import { router } from './routes/userRoutes/UserRouter'
+import { router } from './routes/userRoutes/UserRouter.js'
 
 dotenv.config()
 const port = process.env.PORT
@@ -27,7 +27,3 @@ app.use('/api/v1/diaryapp', router)
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
-app.get('/', (req, res) => {
-    res.json({msg: 'Backend server running'})
-});

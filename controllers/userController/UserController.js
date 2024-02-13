@@ -1,5 +1,4 @@
 import { request, response } from "express";
-import RegistrationRequest from "../../requests/userRequest/SignUpRequest";
 import { UserService } from "../../services/userService/SignUp";
 
 const req = request
