@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "diary sever",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "Saheed Dammy",
