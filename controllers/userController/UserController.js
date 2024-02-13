@@ -13,11 +13,12 @@ export class UserController {
             const userRequest = req.body;   
             const savedUser = await UserService.createUser(userRequest);
 
-            res.status(201).json(savedUser)
+            res.status(201).json(savedUser);            
             
         } catch(error){
-            res.status(500).json({error: error.message})
+            console.log('Failed To Create User', error)
+            res.status(500).json({error: error.message});
 
         }
-    }
+}
 }
