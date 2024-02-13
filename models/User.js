@@ -1,8 +1,8 @@
-import mongoose, { Schema, model } from "mongoose";
+import mongoose, { Schema, Types, model } from "mongoose";
 
 const UserSchema = new Schema({
     id: {
-        type: String
+        type: Types.ObjectId
     },
     
     username: {

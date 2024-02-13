@@ -1,8 +1,8 @@
-import { Schema, model } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 
 const EntrySchema = new Schema({
     id: {
-        type: String
+        type: Types.ObjectId
     },
     
     title: {
