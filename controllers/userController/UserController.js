@@ -1,5 +1,5 @@
 import { request, response } from 'express';
-import UserService from '../../services/userService/SignUp';
+import UserService from '../../services/userService/SignUp.js';
 
 
 class UserController {
@@ -13,7 +13,7 @@ class UserController {
             
         } catch(error){
             console.log('Failed To Create User', error)
-            res.status(500).json({error: error.message});
+            res.status(500).json();
 
         }
 }

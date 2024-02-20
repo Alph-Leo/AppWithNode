@@ -1,4 +1,4 @@
-import User from '../../models/User';
+import User from '../../models/User.js';
 import * as bcrypt from 'bcrypt'
 
 
@@ -16,13 +16,14 @@ import * as bcrypt from 'bcrypt'
                 console.log('User Already Exists');
                 throw new Error('User Already Exists');
             }
-            const newUser = new User({registrationRequest});
+            const newUser = new User(registrationRequest);
            return await newUser.save();
         
 
         } catch(error){
-            console.log('Error Creating User', error);
+            console.error('Error Creating User', error);
             throw error;
+            
         }
 
     }
