@@ -13,7 +13,7 @@ class UserController {
             
         } catch(error){
             console.log('Failed To Create User', error)
-            res.status(500).json();
+            res.status(500).json({error: error.message});
 
         }
 }

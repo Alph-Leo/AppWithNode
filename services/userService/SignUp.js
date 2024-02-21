@@ -7,6 +7,11 @@ import * as bcrypt from 'bcrypt'
         try{
             const {username, password} = registrationRequest;
 
+            if(!password){
+                console.log('It started here');
+                throw new Error('Password Is Required!');
+            }
+
             const hashedPassword = await bcrypt.hash(password, 10);
             registrationRequest.password = hashedPassword;
 
@@ -16,7 +21,7 @@ import * as bcrypt from 'bcrypt'
                 console.log('User Already Exists');
                 throw new Error('User Already Exists');
             }
-            const newUser = new User(registrationRequest);
+            const newUser = new User({registrationRequest});
            return await newUser.save();
         
 
