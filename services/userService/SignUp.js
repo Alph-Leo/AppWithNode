@@ -1,9 +1,10 @@
 import User from '../../models/User.js';
 import * as bcrypt from 'bcrypt'
+import { request } from 'express';
 
 
  class UserService {
-    static async createUser(registrationRequest){
+    static async createUser(registrationRequest = request){
         try{
             const {username, password} = registrationRequest;
 
